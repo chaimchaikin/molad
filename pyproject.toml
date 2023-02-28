@@ -15,7 +15,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-
+dependencies = [
+    "hdate >= 0.10.4",
+]
 [project.urls]
 "Homepage" = "https://github.com/chaimchaikin/molad"
 "Bug Tracker" = "https://github.com/chaimchaikin/molad/issues"
