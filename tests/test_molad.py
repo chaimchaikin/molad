@@ -1,7 +1,7 @@
-from molad.molad import MoladHelper
-from molad.molad import MoladDetails
-from molad.molad import Molad
-from molad.molad import RoshChodesh
+from molad.helper import MoladHelper
+from molad.helper import MoladDetails
+from molad.helper import Molad
+from molad.helper import RoshChodesh
 import datetime
 import pytest
 
