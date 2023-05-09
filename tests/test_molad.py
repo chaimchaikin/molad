@@ -105,6 +105,86 @@ molads = [
                 text="Tuesday & Wednesday",
             )
         )
+    ),
+    (
+    'Two Day Rosh Chodesh Friday and Shabbos - Shabbos Mevorchim - Friday Before Sunset',
+        datetime.datetime(2023, 4, 14, 11),
+        MoladDetails(
+            molad=Molad(
+                friendly="Thursday, 2:08 pm and 13 chalakim",
+                day="Thursday",
+                hours=2,
+                minutes=8,
+                chalakim=13,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Iyyar",
+                days=["Friday", "Shabbos"],
+                text="Friday & Shabbos",
+            )
+        )
+    ),
+    (
+    'Two Day Rosh Chodesh Friday and Shabbos - Shabbos Mevorchim - Friday After Sunset',
+        datetime.datetime(2023, 4, 14, 23),
+        MoladDetails(
+            molad=Molad(
+                friendly="Thursday, 2:08 pm and 13 chalakim",
+                day="Thursday",
+                hours=2,
+                minutes=8,
+                chalakim=13,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=True,
+            rosh_chodesh=RoshChodesh(
+                month="Iyyar",
+                days=["Friday", "Shabbos"],
+                text="Friday & Shabbos",
+            )
+        )
+    ),
+    (
+    'Two Day Rosh Chodesh Friday and Shabbos - Friday Before Sunset',
+        datetime.datetime(2023, 4, 21, 11),
+        MoladDetails(
+            molad=Molad(
+                friendly="Thursday, 2:08 pm and 13 chalakim",
+                day="Thursday",
+                hours=2,
+                minutes=8,
+                chalakim=13,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Iyyar",
+                days=["Friday", "Shabbos"],
+                text="Friday & Shabbos",
+            )
+        )
+    ),
+    (
+    'Two Day Rosh Chodesh Friday and Shabbos - Friday After Sunset',
+        datetime.datetime(2023, 4, 21, 23),
+        MoladDetails(
+            molad=Molad(
+                friendly="Thursday, 2:08 pm and 13 chalakim",
+                day="Thursday",
+                hours=2,
+                minutes=8,
+                chalakim=13,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Iyyar",
+                days=["Friday", "Shabbos"],
+                text="Friday & Shabbos",
+            )
+        )
     )
 ]
 

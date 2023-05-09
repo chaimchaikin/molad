@@ -218,10 +218,15 @@ class MoladHelper:
 
         return {"year": year, "month": month}
 
-    def get_day_of_week(self, numeric_date, day):
+    def get_gdate(self, numeric_date, day):
         hebrew_date = hdate.HebrewDate(numeric_date["year"], numeric_date["month"], day)
         jdn_date = hdate.converters.hdate_to_jdn(hebrew_date)
         gdate = hdate.converters.jdn_to_gdate(jdn_date)
+
+        return gdate;
+
+    def get_day_of_week(self, numeric_date, day):
+        gdate = self.get_gdate(numeric_date, day)
         weekday = gdate.strftime("%A")
 
         if weekday == "Saturday":
@@ -259,15 +264,36 @@ class MoladHelper:
                 days = [first, second],
             )
 
+    def get_shabbos_mevorchim_english_date(self, date):
+        this_month = self.get_numeric_month_year(date)
+        gdate = self.get_gdate(this_month, 30)
+
+        idx = (gdate.weekday() + 1) % 7
+        sat_date = gdate - datetime.timedelta(7+idx-6)
+
+        return sat_date
+    
+    def get_shabbos_mevorchim_hebrew_day_of_month(self, date):
+        gdate = self.get_shabbos_mevorchim_english_date(date)
+        j = hdate.converters.gdate_to_jdn(gdate)
+        h = hdate.converters.jdn_to_hdate(j)
+        return h.day
+    
     def is_shabbos_mevorchim(self, date) -> bool:
         loc = self.get_current_location()
         j = hdate.converters.gdate_to_jdn(date)
         h = hdate.converters.jdn_to_hdate(j)
+        hd = h.day
         z = hdate.Zmanim(date=date, location=loc, hebrew=False)
 
+        if (z.time > z.zmanim["sunset"]):
+            hd += 1
+
+        sm = self.get_shabbos_mevorchim_hebrew_day_of_month(date)
+        
         return (
             self.is_actual_shabbat(z)
-            and h.day >= 23
+            and hd == sm
             and h.month != hdate.htables.Months.Elul
         )
 
