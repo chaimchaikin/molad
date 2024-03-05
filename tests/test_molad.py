@@ -67,6 +67,66 @@ molads = [
         )
     ),
     (
+        'Leap Year During Shevat',
+        datetime.datetime(2024, 2, 9),
+        MoladDetails(
+            molad=Molad(
+                friendly="Friday, 9:29 pm and 5 chalakim",
+                day="Friday",
+                hours=9,
+                minutes=29,
+                chalakim=5,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Adar",
+                days=["Friday", "Shabbos"],
+                text="Friday & Shabbos",
+            )
+        )
+    ),
+    (
+        'Leap Year During Adar 1',
+        datetime.datetime(2024, 3, 4),
+        MoladDetails(
+            molad=Molad(
+                friendly="Sunday, 10:13 am and 6 chalakim",
+                day="Sunday",
+                hours=10,
+                minutes=13,
+                chalakim=6,
+                am_or_pm="am"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Adar II",
+                days=["Sunday", "Monday"],
+                text="Sunday & Monday",
+            )
+        )
+    ),
+    (
+        'Leap Year During Adar 2',
+        datetime.datetime(2024, 4, 4),
+        MoladDetails(
+            molad=Molad(
+                friendly="Monday, 10:57 pm and 7 chalakim",
+                day="Monday",
+                hours=10,
+                minutes=57,
+                chalakim=7,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Nisan",
+                days=["Tuesday"],
+                text="Tuesday",
+            )
+        )
+    ),
+    (
         'Far Past Year',
         datetime.datetime(1823, 3, 7),
         MoladDetails(

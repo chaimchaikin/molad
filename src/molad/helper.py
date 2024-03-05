@@ -210,11 +210,15 @@ class MoladHelper:
         year = d["year"]
         month = d["month"] 
 
-        month = month + 1
-
-        if month == 14:
+        # Tishrei = 12 
+        if month == 12:
             month = 1
             year = year + 1
+        # Adar II = 14, Next Month is Nissan = 7
+        if month == 14:
+            month = 7
+        else:
+            month = month + 1
 
         return {"year": year, "month": month}
 
