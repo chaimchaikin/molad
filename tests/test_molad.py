@@ -19,6 +19,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Adar",
                 days=["Tuesday", "Wednesday"],
@@ -39,6 +40,7 @@ molads = [
                 am_or_pm="am"
             ),
             is_shabbos_mevorchim=True,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Kislev",
                 days=["Tuesday"],
@@ -59,6 +61,7 @@ molads = [
                 am_or_pm="am"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
                 month="Iyyar",
                 days=["Wednesday", "Thursday"],
@@ -68,7 +71,7 @@ molads = [
     ),
     (
         'Leap Year During Shevat',
-        datetime.datetime(2024, 2, 9),
+        datetime.datetime(2024, 2, 2),
         MoladDetails(
             molad=Molad(
                 friendly="Friday, 9:29 pm and 5 chalakim",
@@ -79,6 +82,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Adar",
                 days=["Friday", "Shabbos"],
@@ -99,6 +103,7 @@ molads = [
                 am_or_pm="am"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Adar II",
                 days=["Sunday", "Monday"],
@@ -119,6 +124,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Nisan",
                 days=["Tuesday"],
@@ -139,6 +145,7 @@ molads = [
                 am_or_pm="am"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Nisan",
                 days=["Thursday"],
@@ -159,6 +166,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=True,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Tevet",
                 days=["Tuesday", "Wednesday"],
@@ -179,6 +187,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Iyyar",
                 days=["Friday", "Shabbos"],
@@ -199,6 +208,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=True,
+            is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
                 month="Iyyar",
                 days=["Friday", "Shabbos"],
@@ -219,6 +229,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
                 month="Iyyar",
                 days=["Friday", "Shabbos"],
@@ -239,6 +250,7 @@ molads = [
                 am_or_pm="pm"
             ),
             is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
                 month="Iyyar",
                 days=["Friday", "Shabbos"],
@@ -259,6 +271,7 @@ def test_molad(name, date, expected):
     assert calculated.molad.chalakim == expected.molad.chalakim
     assert calculated.molad.am_or_pm == expected.molad.am_or_pm
     assert calculated.is_shabbos_mevorchim == expected.is_shabbos_mevorchim
+    assert calculated.is_upcoming_shabbos_mevorchim == expected.is_upcoming_shabbos_mevorchim
     assert calculated.rosh_chodesh.month == expected.rosh_chodesh.month
     assert calculated.rosh_chodesh.days == expected.rosh_chodesh.days
     assert calculated.rosh_chodesh.text == expected.rosh_chodesh.text

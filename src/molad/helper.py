@@ -22,9 +22,10 @@ class RoshChodesh:
         self.days = days
 
 class MoladDetails:
-    def __init__(self, molad: Molad, is_shabbos_mevorchim : bool, rosh_chodesh: RoshChodesh):
+    def __init__(self, molad: Molad, is_shabbos_mevorchim : bool, is_upcoming_shabbos_mevorchim : bool, rosh_chodesh: RoshChodesh):
         self.molad = molad
         self.is_shabbos_mevorchim = is_shabbos_mevorchim
+        self.is_upcoming_shabbos_mevorchim = is_upcoming_shabbos_mevorchim
         self.rosh_chodesh = rosh_chodesh
 
 class MoladHelper:
@@ -300,6 +301,13 @@ class MoladHelper:
             and hd == sm
             and h.month != hdate.htables.Months.Elul
         )
+    
+    def is_upcoming_shabbos_mevorchim(self, date) -> bool:
+        weekday_sunday_as_zero = (date.weekday() + 1) % 7
+        upcoming_saturday =  date - datetime.timedelta(days=weekday_sunday_as_zero) + datetime.timedelta(days=6)
+        upcoming_saturday_at_midnight = datetime.datetime.combine(upcoming_saturday, datetime.datetime.min.time())
+
+        return self.is_shabbos_mevorchim(upcoming_saturday_at_midnight)
 
     def is_actual_shabbat(self, z) -> bool:
         today = hdate.HDate(gdate=z.date, diaspora=z.location.diaspora)
@@ -325,6 +333,7 @@ class MoladHelper:
     def get_molad(self, date) -> MoladDetails:
         molad = self.get_actual_molad(date)
         is_shabbos_mevorchim = self.is_shabbos_mevorchim(date)
+        is_upcoming_shabbos_mevorchim = self.is_upcoming_shabbos_mevorchim(date)
         rosh_chodesh = self.get_rosh_chodesh_days(date)
 
-        return MoladDetails(molad, is_shabbos_mevorchim, rosh_chodesh)
+        return MoladDetails(molad, is_shabbos_mevorchim, is_upcoming_shabbos_mevorchim, rosh_chodesh)
