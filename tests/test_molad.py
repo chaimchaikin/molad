@@ -63,7 +63,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
-                month="Iyyar",
+                month="Iyar",
                 days=["Wednesday", "Thursday"],
                 text="Wednesday & Thursday",
             )
@@ -126,7 +126,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
-                month="Nisan",
+                month="Nissan",
                 days=["Tuesday"],
                 text="Tuesday",
             )
@@ -147,7 +147,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
-                month="Nisan",
+                month="Nissan",
                 days=["Thursday"],
                 text="Thursday",
             )
@@ -189,7 +189,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
-                month="Iyyar",
+                month="Iyar",
                 days=["Friday", "Shabbos"],
                 text="Friday & Shabbos",
             )
@@ -210,7 +210,7 @@ molads = [
             is_shabbos_mevorchim=True,
             is_upcoming_shabbos_mevorchim=True,
             rosh_chodesh=RoshChodesh(
-                month="Iyyar",
+                month="Iyar",
                 days=["Friday", "Shabbos"],
                 text="Friday & Shabbos",
             )
@@ -231,7 +231,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
-                month="Iyyar",
+                month="Iyar",
                 days=["Friday", "Shabbos"],
                 text="Friday & Shabbos",
             )
@@ -252,7 +252,7 @@ molads = [
             is_shabbos_mevorchim=False,
             is_upcoming_shabbos_mevorchim=False,
             rosh_chodesh=RoshChodesh(
-                month="Iyyar",
+                month="Iyar",
                 days=["Friday", "Shabbos"],
                 text="Friday & Shabbos",
             )

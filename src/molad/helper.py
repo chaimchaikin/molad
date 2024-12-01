@@ -2,7 +2,6 @@ import datetime
 import math
 import hdate
 from hdate import Location
-import hdate.common
 import hdate.htables
 import hdate.converters
 
@@ -299,7 +298,7 @@ class MoladHelper:
         return (
             self.is_actual_shabbat(z)
             and hd == sm
-            and h.month != hdate.htables.Months.Elul
+            and h.month != hdate.htables.Months.ELUL
         )
     
     def is_upcoming_shabbos_mevorchim(self, date) -> bool:

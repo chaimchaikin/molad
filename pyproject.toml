@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "molad"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="Chaim Chaikin", email="molad@chaimchaikin.com" },
 ]
@@ -16,8 +16,12 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "hdate >= 0.10.4",
+    "hdate >= 0.11.1",
 ]
 [project.urls]
 "Homepage" = "https://github.com/chaimchaikin/molad"
 "Bug Tracker" = "https://github.com/chaimchaikin/molad/issues"
+[tool.pytest.ini_options]
+pythonpath = [
+   ".", "src",
+]
