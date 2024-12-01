@@ -23,6 +23,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Adar",
                 days=["Tuesday", "Wednesday"],
+                gdays=[datetime.date(2023, 2, 21), datetime.date(2023, 2, 22)],
                 text="Tuesday & Wednesday",
             )
         )
@@ -44,6 +45,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Kislev",
                 days=["Tuesday"],
+                gdays=[datetime.date(2023, 11, 14)],
                 text="Tuesday",
             )
         )
@@ -65,6 +67,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Iyar",
                 days=["Wednesday", "Thursday"],
+                gdays=[datetime.date(2024, 5, 8), datetime.date(2024, 5, 9)],
                 text="Wednesday & Thursday",
             )
         )
@@ -86,6 +89,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Adar",
                 days=["Friday", "Shabbos"],
+                gdays=[datetime.date(2024, 2, 9), datetime.date(2024, 2, 10)],
                 text="Friday & Shabbos",
             )
         )
@@ -107,6 +111,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Adar II",
                 days=["Sunday", "Monday"],
+                gdays=[datetime.date(2024, 3, 10), datetime.date(2024, 3, 11)],
                 text="Sunday & Monday",
             )
         )
@@ -128,6 +133,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Nissan",
                 days=["Tuesday"],
+                gdays=[datetime.date(2024, 4, 9)],
                 text="Tuesday",
             )
         )
@@ -149,6 +155,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Nissan",
                 days=["Thursday"],
+                gdays=[datetime.date(1823, 3, 13)],
                 text="Thursday",
             )
         )
@@ -170,6 +177,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Tevet",
                 days=["Tuesday", "Wednesday"],
+                gdays=[datetime.date(2122, 12, 29), datetime.date(2122, 12, 30)],
                 text="Tuesday & Wednesday",
             )
         )
@@ -191,6 +199,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Iyar",
                 days=["Friday", "Shabbos"],
+                gdays=[datetime.date(2023, 4, 21), datetime.date(2023, 4, 22)],
                 text="Friday & Shabbos",
             )
         )
@@ -212,6 +221,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Iyar",
                 days=["Friday", "Shabbos"],
+                gdays=[datetime.date(2023, 4, 21), datetime.date(2023, 4, 22)],
                 text="Friday & Shabbos",
             )
         )
@@ -233,6 +243,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Iyar",
                 days=["Friday", "Shabbos"],
+                gdays=[datetime.date(2023, 4, 21), datetime.date(2023, 4, 22)],
                 text="Friday & Shabbos",
             )
         )
@@ -254,6 +265,7 @@ molads = [
             rosh_chodesh=RoshChodesh(
                 month="Iyar",
                 days=["Friday", "Shabbos"],
+                gdays=[datetime.date(2023, 4, 21), datetime.date(2023, 4, 22)],
                 text="Friday & Shabbos",
             )
         )
@@ -274,6 +286,7 @@ def test_molad(name, date, expected):
     assert calculated.is_upcoming_shabbos_mevorchim == expected.is_upcoming_shabbos_mevorchim
     assert calculated.rosh_chodesh.month == expected.rosh_chodesh.month
     assert calculated.rosh_chodesh.days == expected.rosh_chodesh.days
+    assert calculated.rosh_chodesh.gdays == expected.rosh_chodesh.gdays
     assert calculated.rosh_chodesh.text == expected.rosh_chodesh.text
 
 class Config:

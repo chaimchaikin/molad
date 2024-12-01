@@ -15,10 +15,11 @@ class Molad:
         self.friendly = friendly
 
 class RoshChodesh:
-    def __init__(self, month, text, days):
+    def __init__(self, month, text, days, gdays=None):
         self.month = month
         self.text = text
         self.days = days
+        self.gdays = gdays
 
 class MoladDetails:
     def __init__(self, molad: Molad, is_shabbos_mevorchim : bool, is_upcoming_shabbos_mevorchim : bool, rosh_chodesh: RoshChodesh):
@@ -229,8 +230,7 @@ class MoladHelper:
 
         return gdate;
 
-    def get_day_of_week(self, numeric_date, day):
-        gdate = self.get_gdate(numeric_date, day)
+    def get_day_of_week(self, gdate):
         weekday = gdate.strftime("%A")
 
         if weekday == "Saturday":
@@ -250,22 +250,29 @@ class MoladHelper:
                 month = next_month_name,
                 text = "",
                 days = [],
+                gdays = [],
             )
 
-        first = self.get_day_of_week(this_month, 30)
-        second = self.get_day_of_week(next_month, 1)
+        gdate_first = self.get_gdate(this_month, 30)
+        gdate_gsecond = self.get_gdate(next_month, 1)
+
+        first = self.get_day_of_week(gdate_first)
+        second = self.get_day_of_week(gdate_gsecond)
+
 
         if first == second:
             return RoshChodesh(
                 month = next_month_name,
                 text = first,
                 days = [first],
+                gdays = [gdate_first],
             )
         else:
             return RoshChodesh(
                 month = next_month_name,
                 text = first + " & " + second,
                 days = [first, second],
+                gdays = [gdate_first, gdate_gsecond],
             )
 
     def get_shabbos_mevorchim_english_date(self, date):
