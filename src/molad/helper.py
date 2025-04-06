@@ -321,9 +321,9 @@ class MoladHelper:
             gdate=z.date + datetime.timedelta(days=1), diaspora=z.location.diaspora
         )
 
-        if (today.is_shabbat) and (z.time < z.havdalah):
+        if (today.is_shabbat) and (z.havdalah != None) and (z.time < z.havdalah):
             return True
-        if (tomorrow.is_shabbat) and (z.time >= z.candle_lighting):
+        if (tomorrow.is_shabbat) and (z.candle_lighting != None) and (z.time >= z.candle_lighting):
             return True
 
         return False

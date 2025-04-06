@@ -269,7 +269,29 @@ molads = [
                 text="Friday & Shabbos",
             )
         )
-    )
+    ),
+    (
+        'Shabbos Leading into Yom Tov',
+        datetime.datetime(2025, 4, 6),
+        MoladDetails(
+            molad=Molad(
+                friendly="Sunday, 8:30 pm and 2 chalakim",
+                day="Sunday",
+                hours=8,
+                minutes=30,
+                chalakim=2,
+                am_or_pm="pm"
+            ),
+            is_shabbos_mevorchim=False,
+            is_upcoming_shabbos_mevorchim=False,
+            rosh_chodesh=RoshChodesh(
+                month="Iyar",
+                days=["Monday", "Tuesday"],
+                gdays=[datetime.date(2025, 4, 28), datetime.date(2025, 4, 29)],
+                text="Monday & Tuesday",
+            )
+        )
+    ),
 ]
 
 @pytest.mark.parametrize('name,date,expected', molads)
